@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="form.css">
         <script src='form.js'></script>
     </head>
-    <body>
+    <body onload="onLoad()">
         <Header>
             <div class='container'>
                 <h1>Place your Order</h1>
@@ -16,22 +16,8 @@
         </Header>
         <section class='formSection'>
             <div class='container'>
-                <script>
-
-                    document.addEventListener('DOMContentLoaded', function () {
-                    
-                        document.Testform.Pizza.addEventListener('change', CheckAuswahl);
-                     
-                        function CheckAuswahl () {
-                            var menu = document.Testform.Pizza;
-                            document.querySelector('output').innerHTML = menu.options[menu.selectedIndex].value;		
-                        }
-                    
-                    });
-                    </script>
-                    
                     <h2>Order Form</h2>
-                    <form action="#">
+                    <form action="#" name="orderForm" id='form'>
                         <div id='contact'>
                             <label id='billing'><strong>Billing Information:</strong>
                                 <br>
@@ -68,9 +54,10 @@
                             </label>
                         </div>
                         <br>
-                        <label>Type:
-                            <select name="Typ">
-                                <option>--</option>
+                        <div id='parts_table'>
+                            <label for="type">Part Type:</label>
+                            <select name="type" id='part' onchange="getType()">
+                                <option selected>--</option>
                                 <option>Motherboards</option>
                                 <option>Graphics Cards</option>
                                 <option>CPUs</option>
@@ -80,8 +67,16 @@
                                 <option>Cables</option>
                                 <option>Keyboard/Mouse</option>
                             </select>
-                        </label>
+                            <label for="type" class="dropdown_labels" id='type_label'>Type:</label>
+                            <select name="type" class='dropdowns' id='Motherboards' >
+                                <option selected>--</option>
+                                <option>Intel</option>
+                                <option>AMD</option>
+                            </select>
+                        </div>
+                        
                     </form>
+                    
                     
             </div>
         </section>

@@ -32,10 +32,9 @@ input {
 
 select {
     display: block;
-    font-size: 1.5em;
+    font-size: 1em;
     padding: .6em 1.4em .5em .8em;
-    width: 20em;
-    max-width: 100%; /* useful when width is set to anything other than 100% */
+    width: 25%;
     box-sizing: border-box;
     margin: 0;
     border: 1px solid #aaa;
@@ -64,11 +63,22 @@ select::-ms-expand {
     max-width: 900px;
 }
 
+.dropdowns{
+    visibility: hidden;
+}
+
+.dropdown_labels {
+    width: 25%;
+    background-color: #ffffff;
+    visibility: hidden;
+}
+
 #contact {
     width: 100%;
     columns: 2;
     column-width: auto;
 }
+
 
 #billing{
     display: inline-block;
@@ -77,4 +87,8 @@ select::-ms-expand {
 #info{
     
     display: inline-block;
+}
+
+#type{
+    visibility: hidden;
 }
