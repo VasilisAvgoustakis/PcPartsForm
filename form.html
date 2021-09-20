@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lan='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content='width=device-width, initial-scale=1.0'>
+        <title>Order Form</title>
+        <link rel="stylesheet" href="form.css">
+        <script src='form.js'></script>
+    </head>
+    <body>
+        <Header>
+            <div class='container'>
+                <h1>Place your Order</h1>
+                <h2>Please select the parts using the form below.</h2>
+            </div>
+        </Header>
+        <section class='formSection'>
+            <div class='container'>
+                <script>
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                    
+                        document.Testform.Pizza.addEventListener('change', CheckAuswahl);
+                     
+                        function CheckAuswahl () {
+                            var menu = document.Testform.Pizza;
+                            document.querySelector('output').innerHTML = menu.options[menu.selectedIndex].value;		
+                        }
+                    
+                    });
+                    </script>
+                    
+                    <h2>Order Form</h2>
+                    <form action="#">
+                        <div id='contact'>
+                            <label id='billing'><strong>Billing Information:</strong>
+                                <br>
+                                <input type="text" name="contact" placeholder="John Smith">
+                                <br>
+                                <input type="text" name="company" placeholder="Company Name">
+                                <br>
+                                <input type="text" name="address" placeholder="Address">
+                                <br>
+                                <input type="text" name="city" placeholder="City">
+                                <br>
+                                <input type="text" name="state_zip" placeholder="State, Zip">
+                                <br>
+                                <input type="text" name="phone" placeholder="+4917656882356">
+                                <br>
+                                <input type="text" name="email" placeholder="E-mail">
+                            </label>
+                            
+                            <label id='info'><strong>Shipping Information</strong>(complete only if different than billing):
+                                <br>
+                                <input type="text" name="contact" placeholder="John Smith">
+                                <br>
+                                <input type="text" name="company" placeholder="Company Name">
+                                <br>
+                                <input type="text" name="address" placeholder="Address">
+                                <br>
+                                <input type="text" name="city" placeholder="City">
+                                <br>
+                                <input type="text" name="state_zip" placeholder="State, Zip">
+                                <br>
+                                <input type="text" name="phone" placeholder="+4917656882356">
+                                <br>
+                                <input type="text" name="email" placeholder="E-mail">
+                            </label>
+                        </div>
+                        <br>
+                        <label>Type:
+                            <select name="Typ">
+                                <option>--</option>
+                                <option>Motherboards</option>
+                                <option>Graphics Cards</option>
+                                <option>CPUs</option>
+                                <option>Displays</option>
+                                <option>RAM</option>
+                                <option>HDD</option>
+                                <option>Cables</option>
+                                <option>Keyboard/Mouse</option>
+                            </select>
+                        </label>
+                    </form>
+                    
+            </div>
+        </section>
+
+    </body>
+</html>
