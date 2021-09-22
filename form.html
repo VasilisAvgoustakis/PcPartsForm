@@ -68,33 +68,36 @@
 
                             <input type="number" id="quantity"
                                     value="1" min="1" max="50">
-
+                                
                             <select name="parts" id='parts'>
+                                <!-- motherboards-->
                                 <optgroup label="Motherboards">
                                     <optgroup label="Intel Chip">
-                                        <option value="produkta">Produkt A</option>
-                                        <option value="produktb">Produkt B</option>
-                                        <option value="produktc">Produkt C</option>
+                                        <option>Intel Motherboard 1</option>
+                                        <option>Intel Motherboard 2</option>
+                                        <option>Intel Motherboard 3</option>
                                     </optgroup>
                                     <optgroup label="AMD Chip">
-                                        <option value="produkta">Produkt A</option>
-                                        <option value="produktb">Produkt B</option>
-                                        <option value="produktc">Produkt C</option>
+                                        <option>AMD Motherboard 1</option>
+                                        <option>AMD Motherboard 2</option>
+                                        <option>AMD Motherboard 3</option>
+                                    </optgroup>
+                                </optgroup>
+                                <!-- CPUs-->
+                                <optgroup label="CPUs">
+                                    <optgroup label="Intel">
+                                        <option>Intel Processor 1</option>
+                                        <option>Intel Processor 2</option>
+                                        <option>Intel Processor 3</option>
+                                    </optgroup>
+                                    <optgroup label="AMD">
+                                        <option>AMD Processor 1</option>
+                                        <option>AMD Processor 2</option>
+                                        <option>AMD Processor 3</option>
                                     </optgroup>
                                 </optgroup>
                                 
-                                <optgroup label="Produkte D - F">
-                                  <option value="produktd">Produkt D</option>
-                                  <option value="produkte">Produkt E</option>
-                                  <option value="produktf">Produkt F</option>
-                                </optgroup>
-                                
-                                <optgroup label="Produkte G - I">
-                                  <option value="produktg">Produkt G</option>
-                                  <option value="produkth">Produkt H</option>
-                                  <option value="produkti">Produkt I</option>
-                                </optgroup>
-                            </select>
+                               
 
                             <input type="button" name="addToListBtn" id="addToListBtn" value="Add to List"
                                          onclick="addProductToTable()">
@@ -105,11 +108,12 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th colspan="4">Selected Products Overview</th>
+                                        <th colspan="5">Selected Products Overview</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td class="column_titles">Select</td>
                                         <td class="column_titles">Quantity</td>
                                         <td class="column_titles">Product</td>
                                         <td class="column_titles">Price per Piece</td>
@@ -121,6 +125,7 @@
                         <div id="sum">
                             <!--Total Sum is added here through JH script-->
                         </div>
+
                         <div style="margin-top: 20px;">
                             <input type="submit" name="submit" id="placeOrder" value="Place Order"
                             style="width: 300px; margin: 0 auto;">

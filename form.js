@@ -1,12 +1,19 @@
 
 var singlePrices = [];
+var rowId = 0;
 
 
 function addProductToTable(){
+
+    //incremate itemID
+    rowId++;
+
     var tbodyRef = document.getElementById('order_table').getElementsByTagName('tbody')[0];
 
     // Insert a row at the end of table
     var newRow = tbodyRef.insertRow();
+
+    newRow.id = rowId;
 
     // Insert a cell at the end of the row
     //var newCell = newRow.insertCell();
@@ -25,12 +32,16 @@ function addProductToTable(){
     var totalPriceObj = document.createTextNode(totalPrice);
 
     // Insert a cell at the end of the row
+    var checkBoxCell = newRow.insertCell();
     var quantityCell = newRow.insertCell();
     var productCell = newRow.insertCell();
     var ppPrice = newRow.insertCell();
     var tpPrice = newRow.insertCell();
 
     //append values to cells
+    //checkBoxCell.innerHTML= "<input type='checkbox' id="+itemID+">";
+    checkBoxCell.innerHTML= "<input type='button' name='remove' id='rem"+rowId+"' value='Remove' \
+                             style='width: 25px; margin: 0 auto;' onclick='deleteSelectedItem(this)'>";
     quantityCell.appendChild(quantityValue);
     productCell.appendChild(productText);
     ppPrice.appendChild(priceValue);
@@ -43,14 +54,7 @@ function addProductToTable(){
     //reset quantity
     document.getElementById('quantity').value = '1';
     //update sum value
-    var sum = roundToTwo(singlePrices.reduce(function(a, b){
-        return a + b;
-            }, 0));
-            
-    var sumString = "<h2> Total: " + sum;
-    document.getElementById('sum').innerHTML = sumString;
-
-
+    updateSumVal();
 }
 
 function roundToTwo(num) {
@@ -59,4 +63,38 @@ function roundToTwo(num) {
 
 function generateRandomPrice(){
     return roundToTwo(Math.random() * (1000 - 50 + 1));
+}
+
+function deleteSelectedItem(callerEle){
+    //get the callers id
+    var id = callerEle.id;
+    //match to rows id
+    var rowIdToRemove = id.slice(-1);
+    //get the row to be removed
+    var rowToRemove = document.getElementById(rowIdToRemove);
+    //get the total price of the row to be deleted from the sum
+    var rowsTotalPrice = rowToRemove.getElementsByTagName('td').item(4).textContent;
+
+    //remove total price of selected row from single Prices
+    for( i in singlePrices){
+        if(singlePrices[i] == rowsTotalPrice){
+            var index = singlePrices.indexOf(singlePrices[i])
+            if(index > -1) singlePrices.splice(index, 1);
+        };
+    }
+
+    //update the sum value
+    updateSumVal();
+
+    //remove row
+    rowToRemove.parentNode.removeChild(rowToRemove);
+}
+
+function updateSumVal(){
+    var sum = roundToTwo(singlePrices.reduce(function(a, b){
+        return a + b;
+            }, 0));
+    
+    var sumString = "<h2> Total: " + sum + "</h2>";
+    document.getElementById('sum').innerHTML = sumString;
 }
