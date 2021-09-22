@@ -97,6 +97,11 @@ tfoot {
     
 }
 
+.column_titles {
+    font-weight: bold;
+    background-color: #aaa;
+}
+
 #contact {
     width: 100%;
     columns: 2;

@@ -19,7 +19,7 @@
             <div class='container'>
                     <h2>Order Form</h2>
                     <!--Form starts here-->
-                    <form action="#" name="orderForm" id='form'>
+                    <form action="#" method= "POST" name="orderForm" id='form'>
                         <!--Div containing the contact forms-->
                         <div id='contact'>
                             <label id='billing'><strong>Billing Information:</strong>
@@ -60,16 +60,16 @@
 
                         <!--Dropdown menu starts here-->
                         <div id='parts container'>
+
                             <div id="labels_div">
                                 <label for="quantity" class="selector_label">Quantity:</label>
                                 <label for="parts" class="selector_label">Select Part:</label>
                             </div>
+
                             <input type="number" id="quantity"
                                     value="1" min="1" max="50">
 
-
                             <select name="parts" id='parts'>
-
                                 <optgroup label="Motherboards">
                                     <optgroup label="Intel Chip">
                                         <option value="produkta">Produkt A</option>
@@ -98,7 +98,6 @@
 
                             <input type="button" name="addToListBtn" id="addToListBtn" value="Add to List"
                                          onclick="addProductToTable()">
-
                         </div>
 
                         <!--Table starts here-->
@@ -111,18 +110,21 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Quantity</td>
-                                        <td>Product</td>
-                                        <td>Price per Piece</td>
-                                        <td>Total</td>
+                                        <td class="column_titles">Quantity</td>
+                                        <td class="column_titles">Product</td>
+                                        <td class="column_titles">Price per Piece</td>
+                                        <td class="column_titles">Total</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div id="sum">
-                            
+                            <!--Total Sum is added here through JH script-->
                         </div>
-                        
+                        <div style="margin-top: 20px;">
+                            <input type="submit" name="submit" id="placeOrder" value="Place Order"
+                            style="width: 300px; margin: 0 auto;">
+                        </div>
                     </form>
                     
                     

@@ -45,8 +45,8 @@ function addProductToTable(){
     //update sum value
     var sum = roundToTwo(singlePrices.reduce(function(a, b){
         return a + b;
-    }, 0));
-
+            }, 0));
+            
     var sumString = "<h2> Total: " + sum;
     document.getElementById('sum').innerHTML = sumString;
 
