@@ -31,10 +31,10 @@ input {
 
 
 select {
-    display: block;
+    display: inline;
     font-size: 1em;
     padding: .6em 1.4em .5em .8em;
-    width: 25%;
+    width: 50%;
     box-sizing: border-box;
     margin: 0;
     border: 1px solid #aaa;
@@ -56,6 +56,24 @@ select::-ms-expand {
     display: none;
 }
 
+table {
+    max-width: 900px;
+    width: 100%;
+    margin-top: 20px;
+}
+td {
+    align-self: right;
+    width: 100px;
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+
 
 .container {
     margin: 0 auto; /*Content stays always at the center of the container indepedent of its size*/
@@ -73,12 +91,29 @@ select::-ms-expand {
     visibility: hidden;
 }
 
+.selector_label{
+    display: block;
+    width: 100px;
+    
+}
+
 #contact {
     width: 100%;
     columns: 2;
     column-width: auto;
+    
 }
 
+#parts_container {
+    width: 100%;
+    columns: 3;
+    column-width: auto;
+}
+
+#labels_div{
+    columns: 3;
+    margin-top: 20px;
+}
 
 #billing{
     display: inline-block;
@@ -92,3 +127,16 @@ select::-ms-expand {
 #type{
     visibility: hidden;
 }
+
+#addToListBtn {
+    width: 10%;
+    display: inline;
+    margin-left: 10%;
+}
+
+#quantity{
+    display: inline;
+    width: 5%;
+    margin-right: 19%;
+}
+

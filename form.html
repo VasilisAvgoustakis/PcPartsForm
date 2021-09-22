@@ -7,17 +7,20 @@
         <link rel="stylesheet" href="form.css">
         <script src='form.js'></script>
     </head>
-    <body onload="onLoad()">
+    <body>
         <Header>
             <div class='container'>
                 <h1>Place your Order</h1>
                 <h2>Please select the parts using the form below.</h2>
             </div>
         </Header>
+        <!--Form Section Starts here-->
         <section class='formSection'>
             <div class='container'>
                     <h2>Order Form</h2>
+                    <!--Form starts here-->
                     <form action="#" name="orderForm" id='form'>
+                        <!--Div containing the contact forms-->
                         <div id='contact'>
                             <label id='billing'><strong>Billing Information:</strong>
                                 <br>
@@ -52,27 +55,72 @@
                                 <br>
                                 <input type="text" name="email" placeholder="E-mail">
                             </label>
-                        </div>
                         <br>
-                        <div id='parts_table'>
-                            <label for="type">Part Type:</label>
-                            <select name="type" id='part' onchange="getType()">
-                                <option selected>--</option>
-                                <option>Motherboards</option>
-                                <option>Graphics Cards</option>
-                                <option>CPUs</option>
-                                <option>Displays</option>
-                                <option>RAM</option>
-                                <option>HDD</option>
-                                <option>Cables</option>
-                                <option>Keyboard/Mouse</option>
+                        </div>
+
+                        <!--Dropdown menu starts here-->
+                        <div id='parts container'>
+                            <div id="labels_div">
+                                <label for="quantity" class="selector_label">Quantity:</label>
+                                <label for="parts" class="selector_label">Select Part:</label>
+                            </div>
+                            <input type="number" id="quantity"
+                                    value="1" min="1" max="50">
+
+
+                            <select name="parts" id='parts'>
+
+                                <optgroup label="Motherboards">
+                                    <optgroup label="Intel Chip">
+                                        <option value="produkta">Produkt A</option>
+                                        <option value="produktb">Produkt B</option>
+                                        <option value="produktc">Produkt C</option>
+                                    </optgroup>
+                                    <optgroup label="AMD Chip">
+                                        <option value="produkta">Produkt A</option>
+                                        <option value="produktb">Produkt B</option>
+                                        <option value="produktc">Produkt C</option>
+                                    </optgroup>
+                                </optgroup>
+                                
+                                <optgroup label="Produkte D - F">
+                                  <option value="produktd">Produkt D</option>
+                                  <option value="produkte">Produkt E</option>
+                                  <option value="produktf">Produkt F</option>
+                                </optgroup>
+                                
+                                <optgroup label="Produkte G - I">
+                                  <option value="produktg">Produkt G</option>
+                                  <option value="produkth">Produkt H</option>
+                                  <option value="produkti">Produkt I</option>
+                                </optgroup>
                             </select>
-                            <label for="type" class="dropdown_labels" id='type_label'>Type:</label>
-                            <select name="type" class='dropdowns' id='Motherboards' >
-                                <option selected>--</option>
-                                <option>Intel</option>
-                                <option>AMD</option>
-                            </select>
+
+                            <input type="button" name="addToListBtn" id="addToListBtn" value="Add to List"
+                                         onclick="addProductToTable()">
+
+                        </div>
+
+                        <!--Table starts here-->
+                        <div id= 'order_table'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="4">Selected Products Overview</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Quantity</td>
+                                        <td>Product</td>
+                                        <td>Price per Piece</td>
+                                        <td>Total</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="sum">
+                            
                         </div>
                         
                     </form>
