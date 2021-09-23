@@ -19,41 +19,41 @@
             <div class='container'>
                     <h2>Order Form</h2>
                     <!--Form starts here-->
-                    <form action="#" method= "POST" name="orderForm" id='form'>
+                    <form action="form.php" method= "POST" name="orderForm" id='form'>
                         <!--Div containing the contact forms-->
                         <div id='contact'>
                             <label id='billing'><strong>Billing Information:</strong>
                                 <br>
-                                <input type="text" name="contact" placeholder="John Smith">
+                                <input type="text" name="contact1" placeholder="John Smith">
                                 <br>
-                                <input type="text" name="company" placeholder="Company Name">
+                                <input type="text" name="company1" placeholder="Company Name">
                                 <br>
-                                <input type="text" name="address" placeholder="Address">
+                                <input type="text" name="address1" placeholder="Address">
                                 <br>
-                                <input type="text" name="city" placeholder="City">
+                                <input type="text" name="city1" placeholder="City">
                                 <br>
-                                <input type="text" name="state_zip" placeholder="State, Zip">
+                                <input type="text" name="state_zip1" placeholder="State, Zip">
                                 <br>
-                                <input type="text" name="phone" placeholder="+4917656882356">
+                                <input type="text" name="phone1" placeholder="+4917656882356">
                                 <br>
-                                <input type="text" name="email" placeholder="E-mail">
+                                <input type="text" name="email1" placeholder="E-mail">
                             </label>
                             
                             <label id='info'><strong>Shipping Information</strong>(complete only if different than billing):
                                 <br>
-                                <input type="text" name="contact" placeholder="John Smith">
+                                <input type="text" name="contact2" placeholder="John Smith">
                                 <br>
-                                <input type="text" name="company" placeholder="Company Name">
+                                <input type="text" name="company2" placeholder="Company Name">
                                 <br>
-                                <input type="text" name="address" placeholder="Address">
+                                <input type="text" name="address2" placeholder="Address">
                                 <br>
-                                <input type="text" name="city" placeholder="City">
+                                <input type="text" name="city2" placeholder="City">
                                 <br>
-                                <input type="text" name="state_zip" placeholder="State, Zip">
+                                <input type="text" name="state_zip2" placeholder="State, Zip">
                                 <br>
-                                <input type="text" name="phone" placeholder="+4917656882356">
+                                <input type="text" name="phone2" placeholder="+4917656882356">
                                 <br>
-                                <input type="text" name="email" placeholder="E-mail">
+                                <input type="text" name="email2" placeholder="E-mail">
                             </label>
                         <br>
                         </div>
@@ -105,7 +105,7 @@
 
                         <!--Table starts here-->
                         <div id= 'order_table'>
-                            <table>
+                            <table name='order'>
                                 <thead>
                                     <tr>
                                         <th colspan="5">Selected Products Overview</th>
