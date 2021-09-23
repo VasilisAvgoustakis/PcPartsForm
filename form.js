@@ -38,10 +38,12 @@ function addProductToTable(){
     var ppPrice = newRow.insertCell();
     var tpPrice = newRow.insertCell();
 
-    //append values to cells
-    //checkBoxCell.innerHTML= "<input type='checkbox' id="+itemID+">";
-    checkBoxCell.innerHTML= "<input type='button' name='remove' id='rem"+rowId+"' value='Remove' \
-                             style='width: 25px; margin: 0 auto;' onclick='deleteSelectedItem(this)'>";
+    //set values to cells
+    //checkBoxCell.innerHTML= "<input type='button' name='remove' id='rem"+rowId+"' value='Remove' \
+    //                         style='width: 25px; margin: 0 auto;' onclick='deleteSelectedItem(this)'>";
+    checkBoxCell.innerHTML = "<button type='button' id='rem"+rowId+"' value='Remove' \
+                               style='width: 25px; margin: 0 auto;' onclick='deleteSelectedItem(this)'> \
+                               <img src= './delete.jpg' height='15px' width='15px' ></button>";
     quantityCell.appendChild(quantityValue);
     productCell.appendChild(productText);
     ppPrice.appendChild(priceValue);
@@ -62,7 +64,7 @@ function roundToTwo(num) {
 }
 
 function generateRandomPrice(){
-    return roundToTwo(Math.random() * (1000 - 50 + 1));
+    return roundToTwo(Math.random() * (500 - 50 + 1));
 }
 
 function deleteSelectedItem(callerEle){
@@ -95,6 +97,6 @@ function updateSumVal(){
         return a + b;
             }, 0));
     
-    var sumString = "<h2> Total: " + sum + "</h2>";
-    document.getElementById('sum').innerHTML = sumString;
+    //var sumString = "<h2> Total: " + sum + "</h2>";
+    document.getElementById('sum').innerHTML = sum;
 }
