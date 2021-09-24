@@ -1,6 +1,6 @@
+/*HTML Elements*/
 body{
     background-image: url("./free-backgrounds-25.jpg");
-
 }
 
 header {
@@ -26,7 +26,6 @@ section{
     width: 900px;
     background-color: #ffffff;
     border-radius: 10px;
-    
 }
 
 
@@ -59,10 +58,6 @@ select {
     /* icon size, then gradient */
     background-size: .65em auto, 100%;
 }
-/* Hide arrow icon in IE browsers */
-select::-ms-expand {
-    display: none;
-}
 
 table {
     max-width: 900px;
@@ -81,8 +76,7 @@ tfoot {
     color: #fff;
 }
 
-
-
+/*Classes*/
 .container {
     margin: 0 auto; /*Content stays always at the center of the container indepedent of its size*/
     padding: 0 20px 0 20px;
@@ -123,14 +117,13 @@ tfoot {
     background-color: #aaa;
 }
 
+
+/*IDs*/
 #contact {
     box-sizing: border-box;
     width: 100%;
     columns: 2;
-    
-    
     column-width: auto;
-    
 }
 
 #parts_container {
@@ -150,7 +143,6 @@ tfoot {
 }
 
 #info{
-    
     display: inline-block;
 }
 

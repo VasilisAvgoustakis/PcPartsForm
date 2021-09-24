@@ -20,8 +20,7 @@
             <div class='container'>
                     <!--Form starts here-->
                     <form action="form.php" method= "POST" name="orderForm" id='form'>
-                        <!--Div contai
-                            ning the contact forms-->
+                        <!--Div containing the contact forms-->
                         <div id='contact'>
                             <div class="contact_div">
                                 <label id='billing' class='contact_info'><strong>Billing Information:</strong>
@@ -67,7 +66,6 @@
 
                         <!--Dropdown menu starts here-->
                         <div id='parts container'>
-
                             <div id="labels_div">
                                 <label for="quantity" class="selector_label">Quantity:</label>
                                 <label for="parts" class="selector_label">Select Part:</label>
@@ -103,14 +101,13 @@
                                         <option>AMD Processor 3</option>
                                     </optgroup>
                                 </optgroup>
-                                
-                               
+                                <!--More product and product categories could be added here-->
 
                             <input type="button" name="addToListBtn" id="addToListBtn" value="Add to List"
                                          onclick="addProductToTable()">
                         </div>
 
-                        <!--Table starts here-->
+                        <!--Selected products table starts here-->
                         <div id= 'order_table'>
                             <table name='order'>
                                 <thead>
@@ -127,7 +124,7 @@
                                         <td class="column_titles">Total</td>
                                     </tr>
                                 </tbody>
-                                    <!--Total Sum is added here through JH script-->
+                                    <!--Total Sum is added here dynamicaly through JH script-->
                                 <tfoot>  
                                     <tr>
                                         <th scope="row">Sum Total:</th>
@@ -139,10 +136,7 @@
                                 </tfoot>
                             </table>
                         </div>
-                        <div id="sum">
-                            
-                        </div>
-
+                        <!--Submit butoon-->
                         <div style="margin-top: 20px;">
                             <input type="submit" name="submit" id="placeOrder" value="Place Order"
                             style="width: 300px; margin: 0 auto;">
