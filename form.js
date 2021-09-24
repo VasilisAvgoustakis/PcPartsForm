@@ -12,14 +12,12 @@ function addProductToTable(){
 
     // Insert a row at the end of table
     var newRow = tbodyRef.insertRow();
-
+    //set new rows
     newRow.id = rowId;
 
-    // Insert a cell at the end of the row
-    //var newCell = newRow.insertCell();
 
     //get cell values as text
-    var quantityValue = document.createTextNode(document.getElementById('quantity').value)
+    var quantityValue = document.createTextNode(document.getElementById('quantity').value);
     var productText = document.createTextNode(document.getElementById('parts').value);
 
     //generate random value for price
@@ -34,16 +32,30 @@ function addProductToTable(){
     // Insert a cell at the end of the row
     var checkBoxCell = newRow.insertCell();
     var quantityCell = newRow.insertCell();
+    
     var productCell = newRow.insertCell();
     var ppPrice = newRow.insertCell();
     var tpPrice = newRow.insertCell();
 
-    //set values to cells
-    //checkBoxCell.innerHTML= "<input type='button' name='remove' id='rem"+rowId+"' value='Remove' \
-    //                         style='width: 25px; margin: 0 auto;' onclick='deleteSelectedItem(this)'>";
+
+    /*Set Values and content of all cells*/
+
+    //place delete button in Delete Product Column
     checkBoxCell.innerHTML = "<button type='button' id='rem"+rowId+"' value='Remove' \
                                style='width: 25px; margin: 0 auto;' onclick='deleteSelectedItem(this)'> \
                                <img src= './delete.jpg' height='15px' width='15px' ></button>";
+    
+    //set value of hidden inputs in the cells that POST the data to the server
+    quantityCell.innerHTML= "<input type='hidden' name='quant"+rowId+"' value= '"
+                            +document.getElementById('quantity').value+"'>";
+    productCell.innerHTML= "<input type='hidden' name='product"+rowId+"' value= '"
+                            +document.getElementById('parts').value+"'>";
+    ppPrice.innerHTML= "<input type='hidden' name='ppPrice"+rowId+"' value= '"
+                            +randomPrice+"'>";
+    tpPrice.innerHTML= "<input type='hidden' name='tpPrice"+rowId+"' value= '"
+                            +totalPrice+"'>";
+
+    // set value of quantity cell appearing on form for user                          
     quantityCell.appendChild(quantityValue);
     productCell.appendChild(productText);
     ppPrice.appendChild(priceValue);
@@ -93,10 +105,18 @@ function deleteSelectedItem(callerEle){
 }
 
 function updateSumVal(){
+    //calculate total sum 
     var sum = roundToTwo(singlePrices.reduce(function(a, b){
         return a + b;
             }, 0));
     
-    //var sumString = "<h2> Total: " + sum + "</h2>";
-    document.getElementById('sum').innerHTML = sum;
+    //update total sum in sum total cell
+    document.getElementById('sum').innerHTML = sum +
+                            //add hidden input with the total sum for the server
+                            "<input type='hidden' name='hiddenSum' value= '"+sum+"'>";
+    //set value of hidden input for the server
+    
+    
+    
+    
 }

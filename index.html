@@ -10,51 +10,58 @@
     <body>
         <Header>
             <div class='container'>
-                <h1>Place your Order</h1>
-                <h2>Please select the parts using the form below.</h2>
+                <h1>Order Form</h1>
+                <h3>Please select the parts using the form below.</h3>
             </div>
         </Header>
         <!--Form Section Starts here-->
         <section class='formSection'>
+            <br>
             <div class='container'>
-                    <h2>Order Form</h2>
                     <!--Form starts here-->
                     <form action="form.php" method= "POST" name="orderForm" id='form'>
-                        <!--Div containing the contact forms-->
+                        <!--Div contai
+                            ning the contact forms-->
                         <div id='contact'>
-                            <label id='billing'><strong>Billing Information:</strong>
-                                <br>
-                                <input type="text" name="contact1" placeholder="John Smith">
-                                <br>
-                                <input type="text" name="company1" placeholder="Company Name">
-                                <br>
-                                <input type="text" name="address1" placeholder="Address">
-                                <br>
-                                <input type="text" name="city1" placeholder="City">
-                                <br>
-                                <input type="text" name="state_zip1" placeholder="State, Zip">
-                                <br>
-                                <input type="text" name="phone1" placeholder="+4917656882356">
-                                <br>
-                                <input type="text" name="email1" placeholder="E-mail">
-                            </label>
+                            <div class="contact_div">
+                                <label id='billing' class='contact_info'><strong>Billing Information:</strong>
+                                    <br>
+                                    <input type="text" class="contact_ins" name="contact1" placeholder="John Smith">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="company1" placeholder="Company Name">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="address1" placeholder="Address">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="city1" placeholder="City">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="state_zip1" placeholder="State, Zip">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="phone1" placeholder="+4917656882356">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="email1" placeholder="E-mail">
+                                    <br>
+                                </label>
+                            </div>
                             
-                            <label id='info'><strong>Shipping Information</strong>(complete only if different than billing):
-                                <br>
-                                <input type="text" name="contact2" placeholder="John Smith">
-                                <br>
-                                <input type="text" name="company2" placeholder="Company Name">
-                                <br>
-                                <input type="text" name="address2" placeholder="Address">
-                                <br>
-                                <input type="text" name="city2" placeholder="City">
-                                <br>
-                                <input type="text" name="state_zip2" placeholder="State, Zip">
-                                <br>
-                                <input type="text" name="phone2" placeholder="+4917656882356">
-                                <br>
-                                <input type="text" name="email2" placeholder="E-mail">
-                            </label>
+                            <div class="contact_div">
+                                <label id='info' class='contact_info'><strong>Shipping Information</strong>(complete only if different than billing):
+                                    <br>
+                                    <input type="text" class="contact_ins" name="contact2" placeholder="John Smith">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="company2" placeholder="Company Name">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="address2" placeholder="Address">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="city2" placeholder="City">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="state_zip2" placeholder="State, Zip">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="phone2" placeholder="+4917656882356">
+                                    <br>
+                                    <input type="text" class="contact_ins" name="email2" placeholder="E-mail">
+                                    <br>
+                                </label>
+                            </div>
                         <br>
                         </div>
 
@@ -140,9 +147,8 @@
                             <input type="submit" name="submit" id="placeOrder" value="Place Order"
                             style="width: 300px; margin: 0 auto;">
                         </div>
-                    </form>
-                    
-                    
+                        <br>
+                    </form> 
             </div>
         </section>
 
